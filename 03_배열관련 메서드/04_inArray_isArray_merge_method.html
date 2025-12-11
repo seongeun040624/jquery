@@ -6,8 +6,23 @@
 	<script type="text/javascript" src="js/lib/jquery-1.12.4.min.js"></script>
 	<link rel="stylesheet" href="css/style.css"/>
 	<script type="text/javascript">
-		$(function(){
-			
+		$(function(){ //배열
+			let arr1 =['서울','대전','부산','전주'];
+			let arr2 =['한국','일본','태국','중국'];
+			let obj = {'name':'조부장', 'area':'서울'};//배열 객체 - 대괄호 없으면 객체
+
+			let idxNum = $.inArray('부산',arr1); //2
+			console.log(idxNum);
+
+
+			let okArray1 = $.isArray(arr1);
+			let okArray2 = $.isArray(obj); // 배열인지 물어봄 -false
+			console.log(okArray1);
+			console.log(okArray2);
+
+			$.merge(arr1, arr2);
+			console.log(arr2)
+
 		});
 	</script>
 </head>

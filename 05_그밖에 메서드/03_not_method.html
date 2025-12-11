@@ -7,12 +7,16 @@
 	<link rel="stylesheet" href="css/style.css"/>
 	<script type="text/javascript">
 		$(function(){
-			
+			let el=$('#el li:not(.not)'); //.not만 빼고
+			el.css('background','red'); //필터 셀렉트
+
+			$('#wrap li').not('.el').css('background','pink'); //메소드 방식
 		});
 	</script>
 </head>
 <body>
-	<span>아이디가 el인 엘리먼트의 자식엘리먼트중 class값이 not인 엘리먼트를 제외하여 선택해주고 선택된 엘리먼트의 글자색을 변경해 주세요.</span>
+	<span>아이디가 el인 엘리먼트의 자식엘리먼트중 class값이 not인 엘리먼트를 제외하여 선택해주고 
+		선택된 엘리먼트의 글자색을 변경해 주세요.</span>
 	<div>
 		<ul id="el">
 			<li>1</li>

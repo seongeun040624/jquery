@@ -7,7 +7,13 @@
 	<link rel="stylesheet" href="css/style.css"/>
 	<script type="text/javascript">
 		$(function(){
-			
+			$('#wrap a[target]').css('color','red');
+			$('#wrap a[href^="https"]').css('color','green');
+			$('#wrap a[href$="net"]').css('color','skyblue');
+			$('#wrap a[href*="google"]').css('color','violet');
+			//$('#user_id:text').css('background','red');
+			$('input[type=text]').css('background','yellow');
+			$('input[type=password]').css('background','pink');
 		});
 	</script>
 </head>

@@ -7,12 +7,13 @@
 	<link rel="stylesheet" href="css/style.css"/>
 	<script type="text/javascript">
 		$(function(){
-			
+			$('#el li:has(p)').css('color','red'); //li 중에 하위속성으로 p태그를 가진 애가 잇으면 컬러를 레드로 바꾸셈
 		});
 	</script>
 </head>
 <body>
-	<span>아이디가 el인 엘리먼트의 자식엘리먼트중 :has 필터셀렉터를 이용하여 p태그를 포함하는 엘리먼트를 선택해 글자색을 변경해 주세요.</span>
+	<span>아이디가 el인 엘리먼트의 자식엘리먼트중 :has 필터셀렉터를 이용하여 
+		p태그를 포함하는 엘리먼트를 선택해 글자색을 변경해 주세요.</span>
 	<div>
 		<ul id="el">
 			<li>1</li>

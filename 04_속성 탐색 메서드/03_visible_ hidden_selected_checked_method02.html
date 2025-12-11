@@ -7,7 +7,15 @@
 	<link rel="stylesheet" href="css/style.css"/>
 	<script type="text/javascript">
 		$(function(){
-			
+			$('#wrap .content p:hidden').css({
+				'display':'block',
+				'color':'red'
+			});
+			let a = $('#zone1 :selected').val();
+			console.log(a);
+
+			let b = $('#zone2 :checked').val();
+			console.log(b)
 		});
 	</script>
 </head>

@@ -7,7 +7,12 @@
 	<link rel="stylesheet" href="css/style.css"/>
 	<script type="text/javascript">
 		$(function(){
-			
+			let el = $('#el>ul>li').is('#nextEl');
+			if(el){ //true일때 읽힘
+				alert('존재합니다') //nextEl 값이 존재하기 때문에 true, 존재합니다 창이 뜨게 됨
+			}else{ //false일 때 읽힘
+				alert('존재하지 않습니다')
+			}
 		});
 	</script>
 </head>
