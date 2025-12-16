@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 위치 메서드</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{line-height: 1;}
+        #boxWrap{
+            height: 5000px;
+            padding-top: 2000px;
+        }
+    </style>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    
+</head>
+<body>
+    <div id="boxWrap">
+        <h1>위치 메서드</h1>
+        <script>
+            $(function(){
+                let topNum = $('h1').offset().top;
+                //console.log(topNum);
+                $(window).scrollTop(topNum); // 가장 상위 객체인 window에 적용
+            });
+        </script>
+    </div>
+</body>
+</html>

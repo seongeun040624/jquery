@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>before/after</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{background: #ddd; padding: 30px;}
+        .box{
+            margin: 0 0 20px 0; 
+            background: #fff; 
+            padding: 20px;
+        }
+        h2{font-size: 16px; margin-bottom: 10px;}
+        .box1{
+            width: 300px; 
+            height: 300px; 
+            border: 5px solid #ddd;
+        }
+        .box2{width: 300px;}
+        #basket{
+            background: brown;
+            padding: 10px;
+        }
+        #banner{
+            background: yellow;
+            padding: 10px;
+        }
+        #apple{
+            background: red;
+            padding: 10px;
+        }
+        #orange{
+            background: orange;
+            padding: 10px;
+        }
+
+        .box3{width: 300px;}
+        .box3>div{
+            border: 2px solid red; 
+            height: auto; 
+            margin-bottom: 5px; 
+            padding: 10px;
+        }
+        .box3>div>p{
+            border: 2px solid green; 
+            padding: 10px; 
+            margin-bottom: 3px;
+        }
+
+        .box4-1, .box4-2{width: 300px;}
+        h3{
+            text-align: center; 
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        h4{
+            text-align: center; 
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: tomato;
+        }
+        .box4-1>div, .box4-2>div{border: 2px solid magenta; margin-bottom: 2px;}
+
+        .box5{width: 300px;}
+        ul{list-style: none;}
+        li{border: 2px solid #ddd; margin-bottom: 5px;}
+        h1{font-size: 18px; text-align: center; margin-bottom: 10px; color: red;}
+    </style>
+    <script>
+        $(function(){
+            $('.box1 p:eq(2)').after("<p>다음주도 따뜻했으면 좋겠어요</p>").next().css('border','1px solid red');
+            $('<p>insertAfter</p>').insertAfter('.box1 p:eq(1)');
+            //$('<p>오늘은 화요일입니다</p>').insertBefore('.box1 p:eq(0)');
+            $('.box1 p:eq(0)').before('<p>오늘은 화요일입니다</p>'); // 선택자 먼저
+            $('<p>나는 어디에 들어갈까요</p>').insertBefore('.box1 p:eq(0)'); // 내용먼저
+
+
+            let basket = $('#basket');
+            let banner = $('#banner');
+            let apple = $('#apple');
+            let orange = $('#orange');
+
+            //basket.append(banner);
+            //basket.append(orange);
+            //basket.append(apple);
+
+            //banner.appendTo(basket); // 자신(banner)이 밑에 들어감
+
+            basket.prepend(apple); // 자신(basket)이 밑에 깔림
+            basket.prepend(orange); //괄호 안에 , 사용해서 여러 개 쓸 수도 있음
+            basket.prepend(banner);
+
+
+            let copyObj = $('.clone').children().clone();
+            let obj2 = $('.remove');
+            copyObj.appendTo(obj2); //밑에 들어감
+            $('.remove').remove(); //안에 들어간 거 다 삭제 >감싸고 있는 보더까지 모두 삭제됨
+            $('.empty').empty(); //안에 내용을 비움 > 감싸고 있는 보더는 보임
+
+            $('h3').replaceWith('<h4>replace Method</h4>'); //h3을 h4로 replace
+            $('<p>change</p>').replaceAll('.box4-2>div');
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h2>before/after</h2>
+        <div class="box1">
+            <p>오늘 날씨가 비가 오네요</p>
+            <p>내일은 안 왔으면 좋겠네요</p>
+            <p>이번주는 포근하대데?요</p>
+        </div>
+    </div>
+    <div class="box">
+        <h2>append/prepend 방향전치사</h2>
+        <div class="box2">
+            <div id="basket">basket</div>
+            <div id="banner">banana</div>
+            <div id="apple">apple</div>
+            <div id="orange">orange</div>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>clone/remove/empty</h2>
+        <div class="box3">
+            <div class="clone">
+                <p>내용1</p>
+                <p>내용2</p>
+            </div>
+            <div class="remove">
+                <p>내용3</p>
+                <p>내용4</p>
+            </div>
+            <div class="empty">
+                <p>내용5</p>
+                <p>내용6</p>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <h2>replaceAll/replaceWith</h2>
+        <div class="box4-1">
+            <h3>제목1</h3>
+            <div>내용1</div>
+            <div>내용2</div>
+        </div>
+        <div class="box4-2">
+            <h3>제목2</h3>
+            <div>내용3</div>
+            <div>내용4</div>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>unwrap/wrap/wrapAll/wrapInner</h2>
+        <!-- unwrap 선택 부모 요소를 삭제/wrap감싸는 거?/wrapAll 선택한 요소를 모두 감쌈?/wrapInner 선택한 요소의 모든 하위요소를 감쌈 -->
+        <div class="box5">
+            <h1 id="tit_1">
+                <strong>객체 조작 및 생성</strong>
+            </h1>
+            <p class="ct1">제이쿼리 다음은 뭘 할까요?</p>
+            <p class="ct1">리액트 배웁니다</p>
+            <p class="ct1">리액트 어려운데 어떡하나요</p>
+            <p class="ct1">반복하면 조금씩 이해됩니다</p>
+            <ul>
+                <li>오늘 점심 맛있게 드세요</li>
+                <li>내일도 맛있게 드세요</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
