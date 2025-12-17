@@ -1,0 +1,121 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+body{
+    background: #ddd; 
+    padding: 50px;
+}
+
+.box{
+    background: #fff; 
+    margin-bottom: 20px; 
+    padding: 20px;
+}
+
+h2{font-size: 16px; margin-bottom: 10px;}
+
+.div1{display: none;}
+
+.div3, .div4{
+    background: pink;
+    margin-bottom: 10px;
+}
+
+.container{
+    height: 120px;
+    font-size:5em;
+}
+
+.container>div{margin-bottom: 10px;}
+
+.div5{
+    background: purple;
+    display: none;
+}
+.div6{
+    background: magenta;
+}
+.div7{
+    background: orangered;
+}
+
+#div8{background: yellowgreen; display: none;}
+#div9{background: green;}
+
+.ani{
+    position: relative;
+    width: 100%;
+    height: 800px;
+    background: tomato;
+}
+.div10{
+    background: violet; 
+    padding: 50px;
+    position: absolute;
+    top: 0; left: 0;
+}
+
+
+.div11{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+    top: 120px; left: 10px;
+}
+.div12{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: aqua;
+    position: absolute;
+    bottom: 0;; right: 10px;
+}
+
+
+.balls{
+    width: 500px;
+    height: 800px;
+    background: green;
+    margin: 0 auto;
+    position: relative;
+}
+.stick{
+    width: 20px;
+    height: 200px;
+    background: rgb(86, 58, 21);
+    position: absolute;
+    bottom: -100px; left: 248px;
+}
+.whiteBall{
+    background: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 300px; left: 242px;
+}
+.ball1{
+    background: red;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 500px; left: 242px;
+}
+.ball2{
+    background: blue;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 527px; left: 226px;
+}
+.ball3{
+    background: yellow;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 527px; left: 258px;
+}

@@ -93,6 +93,11 @@
 
             $('h3').replaceWith('<h4>replace Method</h4>'); //h3을 h4로 replace
             $('<p>change</p>').replaceAll('.box4-2>div');
+
+            $('strong').unwrap();
+            $('.ct1').wrap('<div />');
+            $('.ct2').wrapAll('<div />');
+            $('li').wrapInner('<h3 />');
         });
     </script>
 </head>
@@ -148,15 +153,16 @@
 
     <div class="box">
         <h2>unwrap/wrap/wrapAll/wrapInner</h2>
-        <!-- unwrap 선택 부모 요소를 삭제/wrap감싸는 거?/wrapAll 선택한 요소를 모두 감쌈?/wrapInner 선택한 요소의 모든 하위요소를 감쌈 -->
+        <!-- unwrap 선택 부모 요소를 삭제/wrap감싸는 거?/
+         wrapAll 선택한 요소를 모두 감쌈?/wrapInner 선택한 요소의 모든 하위요소를 감쌈 -->
         <div class="box5">
             <h1 id="tit_1">
                 <strong>객체 조작 및 생성</strong>
             </h1>
             <p class="ct1">제이쿼리 다음은 뭘 할까요?</p>
             <p class="ct1">리액트 배웁니다</p>
-            <p class="ct1">리액트 어려운데 어떡하나요</p>
-            <p class="ct1">반복하면 조금씩 이해됩니다</p>
+            <p class="ct2">리액트 어려운데 어떡하나요</p>
+            <p class="ct2">반복하면 조금씩 이해됩니다</p>
             <ul>
                 <li>오늘 점심 맛있게 드세요</li>
                 <li>내일도 맛있게 드세요</li>
